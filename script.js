@@ -22,8 +22,8 @@ function operate (firstNumber, operand, secondNumber) {
     add(firstNumber, secondNumber);
 }
 
-let num1 = prompt('Enter first number:');
-let num2 = prompt('Enter second number:');
+// let num1 = prompt('Enter first number:');
+// let num2 = prompt('Enter second number:');
 
 
 console.log(divide(num1, num2));
