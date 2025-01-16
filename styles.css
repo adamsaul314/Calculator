@@ -13,4 +13,14 @@ body{
   height: 800px;
     width: 600px;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.display{
+    height: 150px;
+    width: 450px;
+    border: 1px solid black;
+    margin-top: 10px;
 }
