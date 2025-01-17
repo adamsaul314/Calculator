@@ -1,7 +1,43 @@
-let firstNumber;
-let operand;
-let secondNumber;
-let btnNum = 1
+let firstNumber = '';
+let operator = '';
+let secondNumber = '';
+let result = '';
+let display = document.getElementById('display');
+
+function handleButtonClick(value) {
+    if (!isNaN(value)) { 
+        if (operator) {
+            secondNumber += value;
+        } else {
+            firstNumber += value;
+        }
+    } else if (['+', '-', '*', '/'].includes(value)) { 
+        if (firstNumber && secondNumber) {
+            firstNumber = operate(firstNumber, operator, secondNumber);
+            secondNumber = '';
+        }
+        operator = value;
+    } else if (value === '=') { 
+        if (firstNumber && operator && secondNumber) {
+            result = operate(firstNumber, operator, secondNumber);
+            display.textContent = result;
+            firstNumber = result;
+            operator = '';
+            secondNumber = '';
+        }
+    } else if (value === 'Clear') { 
+        firstNumber = '';
+        operator = '';
+        secondNumber = '';
+        result = '';
+        display.textContent = '0';
+    }
+    updateDisplay();
+}
+
+function updateDisplay() {
+    display.textContent = `${firstNumber} ${operator} ${secondNumber}`;
+}
 
 function add(num1, num2){
     return +num1 + +num2;
