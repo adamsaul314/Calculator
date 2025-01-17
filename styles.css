@@ -15,6 +15,9 @@ body{
     border: 1px solid black;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
     
 }
 
@@ -23,4 +26,17 @@ body{
     width: 450px;
     border: 1px solid black;
     margin-top: 10px;
+}
+
+.buttons{
+    height: 550px;
+    width: 500px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button{
+    height: 80px;
+    width: 80px;
 }
