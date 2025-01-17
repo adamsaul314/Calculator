@@ -29,17 +29,33 @@ function operate(num1, operator, num2) {
     }
 }
 
+const buttonValues = [
+    '7', '8', '9', '/',
+    '4', '5', '6', '*',
+    '1', '2', '3', '-',
+    '0', 'Clear', '=', '+'
+];
+
+const container = document.querySelector('.buttons');
+buttonValues.forEach(value => {
+    const button = document.createElement('button');
+    button.textContent = value;
+    button.classList.add('button');
+    container.appendChild(button);
+    button.addEventListener('click', () => handleButtonClick(value));
+});
+
+
 // let num1 = prompt('Enter first number:');
 // let num2 = prompt('Enter second number:');
-const container = document.querySelector('.buttons')
+// const container = document.querySelector('.buttons')
 
-for (let i = 0; i < 16; i++) {
-    const buttons = document.createElement('button')
-    buttons.classList.add('button'+btnNum)
-    container.appendChild(buttons)
-    btnNum++
-}
+// for (let i = 0; i < 16; i++) {
+//     const buttons = document.createElement('button')
+//     buttons.classList.add('button'+btnNum)
+//     container.appendChild(buttons)
+//     btnNum++
+// }
 
 
-console.log(divide(num1, num2));
 
